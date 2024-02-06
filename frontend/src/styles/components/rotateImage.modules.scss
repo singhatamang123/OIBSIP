@@ -1,0 +1,65 @@
+@import "../variables";
+@import "../mixins";
+
+.container {
+  display: flex;
+  padding: 40px;
+  align-items: center;
+  justify-content: space-around;
+
+  .left-side,
+  .right-side {
+    flex: 1;
+    margin: 20px; /* Add some margin around the items */
+  }
+
+  .rotate-image {
+    margin-bottom: 20px;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .rotate-image:hover {
+    transform: rotate(360deg);
+  }
+
+  .right-side {
+    text-align: center;
+  }
+
+  .cta-button {
+    display: inline-block;
+    background-color: $secondary-color;
+    color: $primary-color;
+    padding: 0.5rem 2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  .cta-button:hover {
+    background-color: lighten($secondary-color, 10%);
+  }
+
+  p {
+    font-size: 2.5rem;
+    line-height: 1;
+    color: #000; /* Black color */
+    font-weight: bold; /* Bold text */
+    margin-bottom: 2rem;
+  }
+
+  .order-button {
+    background-color: $secondary-color;
+    color: black !important;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+
+    &:hover {
+      background-color: lighten($secondary-color, 10%);
+    }
+  }
+}

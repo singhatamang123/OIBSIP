@@ -1,0 +1,155 @@
+@import "../../variables";
+@import "../../mixins";
+
+.cards {
+  background-color: $background-color;
+  align-items: center;
+  padding: 2rem 0;
+  margin: 0 auto;
+
+  .menu-search {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap: 2rem;
+
+    .menu-title {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: black !important;
+      text-align: left;
+      margin-bottom: 1rem;
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    }
+
+    .input {
+      padding: 0.5rem 2.5rem 0.5rem 1rem; // Adjust padding to make room for the search icon
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 1.5rem;
+      transition: border 0.3s ease-in-out;
+      box-sizing: border-box; // Ensure padding is included in the input's total width
+
+      &:focus {
+        outline: none;
+        border: 1px solid $primary-color;
+      }
+
+      &::placeholder {
+        color: #ccc;
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-align: left; // Align text to the left
+      }
+
+      &:focus::placeholder {
+        color: transparent;
+        transition: color 0.3s ease-in-out;
+      }
+    }
+  }
+
+  .hidden {
+    visibility: hidden;
+    position: absolute;
+  }
+
+  .pizza-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 2fr));
+    grid-gap: 2rem;
+    width: 100%;
+
+    
+
+    .single-item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .pizza {
+      width: auto;
+    }
+
+    .pizza__img,
+    .pizza__name,
+    .pizza__description,
+    .pizza__price {
+      max-width: var(
+        --max-width
+      ); /* Add a variable for max width or use a specific value */
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .pizza {
+      padding: 1rem;
+      border-radius: 5px;
+
+      &__img {
+        width: 100%;
+        height: 30%;
+      }
+
+      &__name {
+        font-size: 2rem;
+        font-weight: bold;
+        margin: 1rem 0;
+        text-align: center;
+        color: $primary-color;
+        text-transform: uppercase;
+        letter-spacing: 0.1rem;
+        line-height: 1.5;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+        text-decoration: none;
+      }
+
+      &__description {
+        font-size: 1.5rem;
+        margin: 1rem 0;
+        color: $text-color;
+        text-align: center;
+        line-height: 1.5;
+        text-decoration: none;
+      }
+
+      &__price {
+        font-size: 2rem;
+        font-weight: bold;
+        margin: 1rem 0;
+        text-align: center;
+        color: $primary-color;
+        text-decoration: none;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+      }
+
+      &__button {
+        padding: 1rem 2rem;
+        font-size: 1.5rem;
+        color: white;
+        background-color: #ff6347; /* Tomato */
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out;
+
+        &:hover {
+          background-color: #ff4500; /* OrangeRed */
+
+          &:active {
+            background-color: #ff6347; /* Tomato */
+            transform: translateY(2px);
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+
+            &:focus {
+              outline: none;
+              background-color: #ff4500; /* OrangeRed */
+            }
+          }
+        }
+      }
+    }
+  }
+}
