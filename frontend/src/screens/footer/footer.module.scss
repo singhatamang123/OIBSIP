@@ -1,0 +1,20 @@
+// Footer.module.scss
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.footer {
+  background-color: $primary-color;
+  color: $secondary-color;
+  text-align: center;
+  padding: 1rem 0;
+//   position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  font-size: $font-size;
+  line-height: $line-height;
+
+  p {
+    margin: 0;
+  }
+}

@@ -4,7 +4,12 @@
 @import "components/Navbar/navbar.module.scss";
 @import "components/rotateImage.modules.scss";
 @import "components/card/pizzacard.modules.scss";
-@import "components/LoginModal/loginModal.scss";
+@import "components/card/pizzaCustomize.modules.scss";
+@import "../screens/login/loginForm.module.scss";
+@import "../screens/login/signupForm.module.scss";
+@import "../screens/login/authForm.module.scss";
+@import "../screens/order/orderForm.module.scss";
+@import "../screens/footer/footer.module.scss";
 
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;

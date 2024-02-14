@@ -1,0 +1,136 @@
+// orderForm.module.scss
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.orderForm {
+  position: fixed;
+  z-index: 9999;
+  right: 0;
+  top: 0;
+  width: 300px;
+  height: 93%;
+  padding: 20px;
+  background-color: rgba(46, 35, 35, 0.8);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  text-align: center;
+
+  .itemsContainer {
+    max-height: calc(93% - 100px); // Adjust this value as needed
+    overflow-y: auto;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    overflow-x: hidden;
+  }
+
+  .fixed-position {
+    position: fixed;
+    bottom: 0;
+    background-color: rgba(46, 35, 35, 0.8);
+    padding: 10px;
+    width: 100%;
+  }
+
+  // ... rest of your code
+
+  h3 {
+    font-size: 0.95rem;
+    color: rgb(195, 23, 123);
+    margin-top: auto;
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    color: antiquewhite;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+  }
+
+  p {
+    font-size: 1rem;
+    color: #ffd700; // Change the color to gold for a premium look
+
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    margin-left: 10px; // Add some left margin to move the price closer to the item name
+  }
+
+  img {
+    width: 100%; // Make the image take up the full width of its container
+    height: auto; // Maintain the aspect ratio of the image
+    object-fit: cover; // Make sure the image covers the full area
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  }
+
+  .item {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 10px;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    align-items: center;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+
+    .quantity {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+
+      button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 0.95rem;
+        color: green;
+
+        &:hover {
+          color: red;
+        }
+      }
+
+      input {
+        width: 50px;
+        padding: 5px;
+        border-radius: 5px;
+        font-size: 0.95rem;
+        text-align: center;
+      }
+    }
+
+    .delete {
+      background: none;
+      border: none;
+      color: red;
+      cursor: pointer;
+      font-size: 0.95rem;
+    }
+  }
+
+  .total {
+    font-size: 1.5rem;
+    color: yellowgreen;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+  }
+
+  button {
+    padding: 10px 20px;
+    background-color: green;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: darkgreen;
+    }
+  }
+}

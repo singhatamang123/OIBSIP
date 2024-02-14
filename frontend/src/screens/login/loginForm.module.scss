@@ -1,0 +1,39 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.loginForm {
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    input {
+      margin-bottom: 10px;
+      padding: 10px;
+      border: 1px solid #ccc; /* Add a subtle border */
+      border-radius: 5px;
+      font-size: 16px; /* Increase font size for better readability */
+      transition: border-color 0.3s ease; /* Add transition for a smooth effect */
+
+      &:focus {
+        border-color: green; /* Change border color on focus */
+        outline: none; /* Remove the default outline */
+      }
+    }
+
+    button {
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: green;
+      color: white;
+      cursor: pointer;
+      font-size: 16px; /* Increase font size for better readability */
+      transition: background-color 0.3s ease; /* Add transition for a smooth effect */
+
+      &:hover {
+        background-color: darkgreen; /* Darken the background color on hover */
+      }
+    }
+  }
+}

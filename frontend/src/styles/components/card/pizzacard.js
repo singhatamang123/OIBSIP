@@ -2,6 +2,7 @@ import { React, useState } from "react";
 import p1 from "../../../images/new.png";
 import p2 from "../../../images/pi.png";
 import p3 from "../../../images/mag.png";
+import PizzaCustomize from "./pizzaCustomize";
 
 const pizzaData = [
   {
@@ -45,10 +46,26 @@ const pizzaData = [
 
     img: p2,
   },
+
+  {
+    name: "Pizza",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    price: 12.99,
+    img: p1,
+  },
 ];
 const PizzaCard = () => {
   const [searchTerm, setSearchTerm] = useState("");
+  const [showModal, setShowModal] = useState(false);
 
+  const openModal = () => {
+    setShowModal(true);
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
+  };
   const filteredPizzaData = pizzaData.filter((pizza) =>
     pizza.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
@@ -56,10 +73,10 @@ const PizzaCard = () => {
   return (
     <section className="cards">
       <div className="menu-search">
-        <h1 className="menu-title">Menu items</h1>
+        <h1 className="menu-title">Menu Items</h1>
         <input
           type="text"
-          placeholder="Search menu items.."
+          placeholder="Search items.."
           className="input"
           onChange={(event) => {
             setSearchTerm(event.target.value);
@@ -89,10 +106,24 @@ const PizzaCard = () => {
             <h2 className="pizza__name">{pizza.name}</h2>
             <p className="pizza__description">{pizza.description}</p>
             <p className="pizza__price">Price: ${pizza.price}</p>
-            <button className="pizza__button">Add to Cart</button>
+            <div className="pizza__button-container">
+              <button className="pizza__button">Add to Cart</button>
+              <button
+                className="pizza__button"
+                onClick={openModal} // Open the modal when clicked
+              >
+                Customize
+              </button>
+            </div>
           </div>
         ))}
       </div>
+
+      {showModal && (
+        <div className="modal" onClick={closeModal}>
+          <PizzaCustomize closeModal={closeModal} />
+        </div>
+      )}
     </section>
   );
 };
